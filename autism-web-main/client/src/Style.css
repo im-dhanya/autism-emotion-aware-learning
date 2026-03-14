@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* study module */
+
+
+.active{
+    display: block;
+}
+.story{
+    cursor: pointer;
+}
+.hidden{
+    display: none;
+}
+
+/* iframe */
+.iframe{
+    width: 100%;
+    height: 500px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.close-icon{
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+
+
+/* register */
+
+.container-register{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("./images/bookbg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.section-1 h2{
+    color: #754242;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.15);
+    margin-left: 90px;
+    margin-top: -100px;
+}
+.section-1 span{
+    color: #805858;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 2.6rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.15);
+    margin-top: -100px;
+}
+
+.section-2{
+    width: 20%;
+    height: 500px;
+    padding: 20px;
+    background-color: rgba(189, 170, 160, 0.75);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 16px ;
+}
+.section-2 h2{
+    color: #754242;
+}
+.label{
+    position: absolute;
+    left: -9999px;
+}
+.link{
+    color: #754242;
+}
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.input{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #8a6d6d;
+    outline: none;
+    background-color: #fffaf7;
+    color: #5a3e3e;
+}
+::placeholder{
+    color: #9c7a7a;
+}
+button{
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #805858;
+    border-radius: 12px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #6f4c4c;
+}
+li{
+    list-style: none;
+}

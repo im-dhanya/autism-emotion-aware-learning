@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import * as tf from '@tensorflow/tfjs';
 import * as facemesh from '@tensorflow-models/facemesh';
 import Webcam from 'react-webcam';
-
+import { useNavigate } from "react-router-dom";
 
 const calculateDistance = (point1, point2) => {
   const dx = point1[0] - point2[0];
@@ -13,6 +13,7 @@ const calculateDistance = (point1, point2) => {
 const Prediction = () => {
   const webcamRef = useRef(null); 
   const canvasRef = useRef(null); 
+  const navigate = useNavigate(); 
   const [model, setModel] = useState(null); 
   const [previousLandmarks, setPreviousLandmarks] = useState(null);
   const [reactionPercentage, setReactionPercentage] = useState(0); 
@@ -102,8 +103,16 @@ const Prediction = () => {
 
            
             const percentage = getReactionPercentage(reactionCount);
-            setReactionPercentage(percentage);
-            localStorage.setItem("autism-level",percentage)
+setReactionPercentage(percentage);
+localStorage.setItem("autism-level", percentage);
+
+// Redirect based on severity
+if (percentage >= 60) {
+  navigate("/communication/high/module");
+} 
+else if (percentage >= 20) {
+  navigate("/communication/low/module");
+}
           }
 
          

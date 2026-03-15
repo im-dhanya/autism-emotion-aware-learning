@@ -1,7 +1,8 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, lazy, Suspense } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Prediction from "../Prediction";
+
+const Prediction = lazy(() => import("../Prediction"));
 
 function RegisterPage(){
 
@@ -201,7 +202,11 @@ function RegisterPage(){
 
     return(
         <>
-        {/*{isClicked && <Prediction/>}*/}
+        {isClicked && (
+  <Suspense fallback={<div>Loading AI Module...</div>}>
+    <Prediction />
+  </Suspense>
+)}
         {
           page === "register" ? 
           <main className="container-register">

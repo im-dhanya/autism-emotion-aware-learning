@@ -201,7 +201,7 @@ function RegisterPage(){
 
     return(
         <>
-        {isClicked && <Prediction/>}
+        {/*{isClicked && <Prediction/>}*/}
         {
           page === "register" ? 
           <main className="container-register">
@@ -212,7 +212,7 @@ function RegisterPage(){
         <section className="section-2">
         <h2>Register Page</h2>
         <br/>
-        <form className="form">
+        <form className="form" onSubmit={handleRegisterSubmit}>
             <label className="label" htmlFor="name">Name</label>
             <input className="input" type="text" name="name" id="name" value={registerInputs.name} placeholder="Enter children or parent" onChange={handleRegisterChange} />
             {registerErrors.name.required ? <div>Enter Your Name</div> : null}

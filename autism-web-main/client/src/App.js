@@ -27,6 +27,7 @@ function App() {
       <Route path="/test/module" element={<TestModule/>} />
       <Route path="/prediction" element={<Prediction/>} />
       <Route path="/parent" element={<Parent/>} />
+      <Route path="/test" element={<Prediction />} />
     </Routes>
     </>
   );

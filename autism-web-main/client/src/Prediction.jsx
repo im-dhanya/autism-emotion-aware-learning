@@ -107,11 +107,19 @@ setReactionPercentage(percentage);
 localStorage.setItem("autism-level", percentage);
 
 // Redirect based on severity
-if (percentage >= 60) {
-  navigate("/communication/high/module");
-} 
-else if (percentage >= 20) {
-  navigate("/communication/low/module");
+const duration = (Date.now() - startTime) / 1000;
+
+if (duration > 20 && !hasNavigated) {   // 👈 20 sec (you can change)
+
+  setHasNavigated(true);
+
+  if (percentage >= 60) {
+    navigate("/communication/high/module");
+  } 
+  else if (percentage < 40) {
+    navigate("/communication/low/module");
+  }
+
 }
           }
 

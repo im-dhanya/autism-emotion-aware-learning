@@ -185,6 +185,7 @@ function RegisterPage(){
                     navigate("/dashboard")
                 } catch (error) {
                     console.log(error)
+                    alert("Registration failed");
                 }
             }
 
@@ -237,7 +238,7 @@ function RegisterPage(){
             <div className="btns">
             <button onClick={handlePredict}>Take A Test</button>
             <br/>
-            <button onClick={handleRegisterSubmit} disabled={!registerHaveError} >Submit</button>
+            <button type="submit">Submit</button>
             </div>
         </form>
 

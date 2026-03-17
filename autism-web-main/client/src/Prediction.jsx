@@ -20,6 +20,8 @@ const Prediction = () => {
   const [reactionCount, setReactionCount] = useState(0); 
   const [isReacting, setIsReacting] = useState(false); 
   const [lastReactionTimestamp, setLastReactionTimestamp] = useState(null); 
+  const [startTime] = useState(Date.now());
+  const [hasNavigated, setHasNavigated] = useState(false);
 
 
   useEffect(() => {
@@ -145,7 +147,7 @@ if (duration > 20 && !hasNavigated) {   // 👈 20 sec (you can change)
   useEffect(() => {
     const interval = setInterval(detectFace, 100);
     return () => clearInterval(interval); 
-  }, [model, previousLandmarks]);
+  }, [model]);
 
   return (
     <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>

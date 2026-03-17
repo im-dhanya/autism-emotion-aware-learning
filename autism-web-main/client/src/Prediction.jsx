@@ -147,7 +147,7 @@ if (duration > 20 && !hasNavigated) {   // 👈 20 sec (you can change)
   useEffect(() => {
     const interval = setInterval(detectFace, 100);
     return () => clearInterval(interval); 
-  }, [model]);
+  }, [model, previousLandmarks]);
 
   return (
     <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>

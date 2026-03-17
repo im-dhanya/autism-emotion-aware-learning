@@ -111,10 +111,10 @@ localStorage.setItem("autism-level", percentage);
 // Redirect based on severity
 const duration = (Date.now() - startTime) / 1000;
 
-if (duration > 20 && !hasNavigated) {   // 👈 20 sec (you can change)
+if (duration > 30 && !hasNavigated) {   // 👈 30 sec (you can change)
 
   setHasNavigated(true);
-
+  stopCamera();
   if (percentage >= 60) {
     navigate("/communication/high/module");
   } 
@@ -148,6 +148,14 @@ if (duration > 20 && !hasNavigated) {   // 👈 20 sec (you can change)
     const interval = setInterval(detectFace, 100);
     return () => clearInterval(interval); 
   }, [model, previousLandmarks]);
+
+  const stopCamera = () => {
+  const video = webcamRef.current?.video;
+  if (video && video.srcObject) {
+    const tracks = video.srcObject.getTracks();
+    tracks.forEach((track) => track.stop());
+  }
+};
 
   return (
     <div style={{ position: 'relative', width: '100vw', height: '100vh' }}>

@@ -271,7 +271,15 @@ function RegisterPage(){
             <br/>
             <br/>
 
-            
+            <div className="btns">
+  <button type = "button" onClick={() => navigate("/test")}>
+    Take A Test
+  </button>
+  <br/>
+  <button disabled={!haveError}>
+    Submit
+  </button>
+</div>
         </form>
 
         <br/>

@@ -116,10 +116,10 @@ if (duration > 30 && !hasNavigated) {   // 👈 30 sec (you can change)
   setHasNavigated(true);
   stopCamera();
   if (percentage >= 60) {
-    navigate("/communication/high/module");
+    navigate("/communication/low/module");
   } 
   else if (percentage < 40) {
-    navigate("/communication/low/module");
+    navigate("/communication/high/module");
   }
 
 }

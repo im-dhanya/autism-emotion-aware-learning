@@ -93,7 +93,7 @@ function RegisterPage(){
               }
         }
         else {
-    alert("Please enter role as 'children' or 'parent'");
+  alert("Please enter role as 'children' or 'parent'");
 }
         setRegisterErrors({...errors})
         setRegisterHaveerror(hasError);
@@ -147,8 +147,10 @@ function RegisterPage(){
             hasError=true;
         }
 
+    const role = inputs.name.toLowerCase().trim();
 
-        if(inputs.name === "children"){
+console.log("Login Inputs:", inputs);
+        if(role === "children"){
             async function loginuser(){
                 try {
                     const url = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/user/children/login`,{
@@ -173,7 +175,7 @@ function RegisterPage(){
               }
         }
 
-        if(inputs.name === "parent"){
+        if(role === "parent"){
             async function loginparent(){
                 try {
                     const url = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/user/parent/login`,{
@@ -197,7 +199,9 @@ function RegisterPage(){
                 setInputs({name:"",email:"",password:""})
               }
         }
-
+        else {
+  alert("Please enter role as 'children' or 'parent'");
+}
 
         setErrors({...errors})
         setHaveerror(hasError)
@@ -279,7 +283,7 @@ function RegisterPage(){
     Take A Test
   </button>
   <br/>
-  <button disabled={!haveError}>
+  <button type="submit">
     Submit
   </button>
 </div>

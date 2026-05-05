@@ -92,9 +92,7 @@ function RegisterPage(){
                 setRegisterInputs({name:"",email:"",password:""});
               }
         }
-        else {
-  alert("Please enter role as 'children' or 'parent'");
-}
+       
         setRegisterErrors({...errors})
         setRegisterHaveerror(hasError);
 
@@ -199,9 +197,7 @@ console.log("Login Inputs:", inputs);
                 setInputs({name:"",email:"",password:""})
               }
         }
-        else {
-  alert("Please enter role as 'children' or 'parent'");
-}
+        
 
         setErrors({...errors})
         setHaveerror(hasError)

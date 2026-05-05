@@ -111,7 +111,7 @@ localStorage.setItem("autism-level", percentage);
 // Redirect based on severity
 const duration = (Date.now() - startTime) / 1000;
 
-if (duration > 30 && !hasNavigated) {   // 👈 30 sec (you can change)
+if (duration > 30 && !hasNavigated) {   // 30 s
 
   setHasNavigated(true);
   stopCamera();

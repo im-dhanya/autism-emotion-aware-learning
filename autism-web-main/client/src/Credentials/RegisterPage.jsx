@@ -27,7 +27,7 @@ function RegisterPage(){
         const {name,value}=e.target;
         setRegisterInputs({...registerInputs,[name]:value})
     }
-
+    const role = registerInputs.name.toLowerCase().trim();
     function handleRegisterSubmit(e){
         e.preventDefault();
         let errors = initialRegisterErrors;
@@ -48,7 +48,7 @@ function RegisterPage(){
 
 
         
-        if(registerInputs.name === "children"){
+        if(role === "children"){
             async function registeruser(){
                 try {
                     const url = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/user/children/register`,{
@@ -71,7 +71,7 @@ function RegisterPage(){
               }
         }
 
-        if(registerInputs.name === "parent"){
+        if(role === "parent"){
             async function registerparent(){
                 try {
                     const url = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/user/parent/register`,{
@@ -92,7 +92,9 @@ function RegisterPage(){
                 setRegisterInputs({name:"",email:"",password:""});
               }
         }
-
+        else {
+    alert("Please enter role as 'children' or 'parent'");
+}
         setRegisterErrors({...errors})
         setRegisterHaveerror(hasError);
 
@@ -160,8 +162,9 @@ function RegisterPage(){
                     localStorage.setItem("token",response.accesstoken);
                     navigate("/dashboard")
                 } catch (error) {
-                    console.log(error)
-                }
+    console.error(error);
+    alert(error.response?.data?.message || "Registration failed");
+}
             }
 
             if(!hasError){

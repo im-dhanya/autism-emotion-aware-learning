@@ -26,7 +26,7 @@ const RegisterChildern = asyncHandler( async (req,res)=>{
         })
 
         console.log(newuser);
-        res.status(201).json({message : "User Registered Successfully"});
+        res.status(200).json({message : "User Registered Successfully"});
     }
     else{
         res.status(400);
@@ -97,7 +97,7 @@ const RegisterParent = asyncHandler( async (req,res)=>{
     }
     else{
         res.status(400);
-        throw new Error({message : "User Exist"})
+        throw new Error("User already exists");
     }
 })
 

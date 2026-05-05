@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+app.set("trust proxy", 1);
 const dotenv = require("dotenv").config();
 const { dbConnect } = require("./dbConnection/connectDB");
 const PORT = process.env.PORT || 5001;
